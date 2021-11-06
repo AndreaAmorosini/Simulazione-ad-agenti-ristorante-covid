@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class StatoTavolo : MonoBehaviour
 {
-    public int tipoTavolo;  //1 : tavolo da quattro posti ;  2 : tavolo da due posti
+    public enum TipoTavolo
+    {
+        daQuattro,
+        daDue
+    };  //1 : tavolo da quattro posti ;  2 : tavolo da due posti
+
+    public TipoTavolo tipoTavolo;
     public bool Occupato;
     public bool ProntoPerServito;
     public bool Servito;
@@ -57,7 +63,7 @@ public class StatoTavolo : MonoBehaviour
         Servito = servito;
     }
 
-    public int getTipoTavolo()
+    public TipoTavolo getTipoTavolo()
     {
         return tipoTavolo;
     }

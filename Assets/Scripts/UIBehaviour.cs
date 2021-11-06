@@ -61,8 +61,8 @@ public class UIBehaviour : MonoBehaviour
         textNrContagiati.text = "Numero Contagiosi : " + covidController.nrContagious;
         textNrContagiosi.text = "Numero Contagiati : " + covidController.nrInfected;
         textNrClientiInAttesa.text = "Numero Clienti in attesa : " + simulationCounter.nrClientiInAttesa;
-        textNrClientiServiti.text = "Numero Clienti serviti : " + simulationCounter.nrClientiMangiando;
-        textNrClientiFinito.text = "Numero Clienti alzati : " + simulationCounter.nrClientiFinito;
+        textNrClientiServiti.text = "Numero Clienti Serviti : " + simulationCounter.nrClientiMangiando;
+        textNrClientiFinito.text = "Numero Clienti Alzati : " + simulationCounter.nrClientiFinito;
         textNrClientiServitiTot.text = "Numero Clienti serviti in totale : " + simulationCounter.nrClientiServiti;
         textAmpEmissione.text = "Ampiezza di emissione : " + sliderAmpEmissione.value;
         textPercorsoMax.text = "Percorso massimo : " + sliderPercorsoMax.value;
@@ -70,14 +70,8 @@ public class UIBehaviour : MonoBehaviour
         foreach (GameObject cliente in clienti)
         {
             cliente.GetComponent<IAClienteFSM>().walkSpeed = sliderWalkSpeed.value;
-            if(sliderPercentualeInfezione.value != 0)
-            {
-                cliente.GetComponent<IAClienteFSM>().infectionPercentage = (int)sliderPercentualeInfezione.value;
-            }
-            if(sliderPercentualeContagiosi.value != 0)
-            {
-                cliente.GetComponent<IAClienteFSM>().contagiousPercentage = (int)sliderPercentualeContagiosi.value;
-            }
+            cliente.GetComponent<IAClienteFSM>().infectionPercentage = (int)sliderPercentualeInfezione.value;
+            cliente.GetComponent<IAClienteFSM>().contagiousPercentage = (int)sliderPercentualeContagiosi.value;
             cliente.GetComponent<IAClienteFSM>().angoloEmissione = (int) sliderAngoloEmissione.value;
             cliente.GetComponent<IAClienteFSM>().ampiezzaEmissione = (int)sliderAmpEmissione.value;
             cliente.GetComponent<IAClienteFSM>().maxPathVirus = sliderPercorsoMax.value;
@@ -85,11 +79,11 @@ public class UIBehaviour : MonoBehaviour
         foreach(GameObject cameriere in camerieri)
         {
             cameriere.GetComponent<IACameriereFSM>().walkSpeed = sliderWalkSpeed.value;
-            if(sliderPercentualeInfezione.value != 0)
-            {
-                cameriere.GetComponent<IACameriereFSM>().infectionPercentage = (int)sliderPercentualeInfezione.value;
-
-            }
+            cameriere.GetComponent<IACameriereFSM>().infectionPercentage = (int)sliderPercentualeInfezione.value;
+            cameriere.GetComponent<IACameriereFSM>().contagiousPercentage = (int)sliderPercentualeContagiosi.value;
+            cameriere.GetComponent<IACameriereFSM>().angoloEmissione = (int)sliderAngoloEmissione.value;
+            cameriere.GetComponent<IACameriereFSM>().ampiezzaEmissione = (int)sliderAmpEmissione.value;
+            cameriere.GetComponent<IACameriereFSM>().maxPathVirus = sliderPercorsoMax.value;
         }
         spawner.delay = sliderDelaySpawn.value;
         spawner.maxCamerieri = (int) sliderNumMaxCamerieri.value;

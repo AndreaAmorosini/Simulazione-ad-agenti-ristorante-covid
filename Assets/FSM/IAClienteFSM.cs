@@ -60,9 +60,9 @@ public class IAClienteFSM : MonoBehaviour
     void Start()
     {
         //crea i tre stati e li aggiunge al fsm
-        GetComponentsInChildren<Image>()[1].color = Color.red;
+        GetComponentsInChildren<Image>()[1].color = Color.green;
         GetComponentInChildren<ColliderCovidCliente>().gameObject.SetActive(true);
-        contagiousPercentage = Random.Range(0, 100);
+        //contagiousPercentage = Random.Range(0, 100);
         walkSpeed = 1.0f;
         covidController = GameObject.FindGameObjectWithTag("Utility").GetComponent<CovidController>();
         particleSystem = GetComponentInChildren<Illness>().gameObject;
@@ -79,11 +79,15 @@ public class IAClienteFSM : MonoBehaviour
 
         }*/
         isInfected = false;
+        /*
         if (!isContagious)
         {
             colliderCovid = GetComponentInChildren<ColliderCovidCliente>().gameObject;
-        }
-        infectionPercentage = Random.Range(0, 100);
+        }*/
+
+        colliderCovid = GetComponentInChildren<ColliderCovidCliente>().gameObject;
+
+        //infectionPercentage = Random.Range(0, 100);
         path = GetComponent<AIPath>();
         ani = GetComponent<Animator>();
         UI = this.gameObject.GetComponentInChildren<SetStatoUI>();
@@ -159,7 +163,7 @@ public class IAClienteFSM : MonoBehaviour
             if (isInfected)
             {
                 isInfected = false;
-                GetComponentsInChildren<Image>()[1].color = Color.red;
+                GetComponentsInChildren<Image>()[1].color = Color.green;
                 colliderCovid.SetActive(true);
             }
             ai.target = null;
@@ -209,7 +213,10 @@ public class IAClienteFSM : MonoBehaviour
                 GetComponentsInChildren<Image>()[1].color = Color.yellow;
                 Debug.Log("Contagious");
                 GameObject.FindGameObjectWithTag("Utility").GetComponent<CovidController>().addContagious();
-                GetComponentInChildren<ColliderCovidCliente>().gameObject.SetActive(false);
+                if(GetComponentInChildren<ColliderCovidCliente>() != null)
+                {
+                    GetComponentInChildren<ColliderCovidCliente>().gameObject.SetActive(false);
+                }
                 var covid = GetComponentInChildren<Illness>().GetComponentInChildren<ParticleSystem>().shape;
                 covid.angle = angoloEmissione;
                 Illness.EmissionAngle = ampiezzaEmissione;
@@ -453,9 +460,13 @@ public class IAClienteFSM : MonoBehaviour
     public void Infected()
     {
         isInfected = true;
-        GetComponentsInChildren<Image>()[1].color = Color.white;
+        GetComponentsInChildren<Image>()[1].color = Color.red;
         covidController.addInfected();
-        GetComponentInChildren<ColliderCovidCliente>().gameObject.SetActive(false);
+        if(GetComponentInChildren<ColliderCovidCliente>() != null)
+        {
+            GetComponentInChildren<ColliderCovidCliente>().gameObject.SetActive(false);
+
+        }
     }
 
     public void Contagious()

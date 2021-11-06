@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.09019608, g: 0.44313726, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -379,7 +379,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Numero clienti alzati : '
+  m_Text: 'Numero Clienti Alzati : '
 --- !u!222 &116568674
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -405,7 +405,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &133420364
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1079,7 +1079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.09019608, g: 0.44313726, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1913,7 +1913,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &694559222
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3492,7 +3492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5803922, g: 0.054901965, b: 0.03137255, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3930,7 +3930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.09019608, g: 0.44313726, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4295,7 +4295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.09164073, g: 0.4433962, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4783,6 +4783,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 191343392, guid: 3f8a8fb816d96944ebcb6857cac0c834, type: 3}
+      propertyPath: tipoTavolo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 483672512, guid: 3f8a8fb816d96944ebcb6857cac0c834, type: 3}
+      propertyPath: tipoTavolo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 608259011, guid: 3f8a8fb816d96944ebcb6857cac0c834, type: 3}
+      propertyPath: tipoTavolo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1163876092, guid: 3f8a8fb816d96944ebcb6857cac0c834, type: 3}
+      propertyPath: tipoTavolo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1210192309, guid: 3f8a8fb816d96944ebcb6857cac0c834, type: 3}
+      propertyPath: tipoTavolo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440459127, guid: 3f8a8fb816d96944ebcb6857cac0c834, type: 3}
+      propertyPath: tipoTavolo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1450263556, guid: 3f8a8fb816d96944ebcb6857cac0c834, type: 3}
+      propertyPath: tipoTavolo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1464020153, guid: 3f8a8fb816d96944ebcb6857cac0c834, type: 3}
+      propertyPath: tipoTavolo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839722126, guid: 3f8a8fb816d96944ebcb6857cac0c834, type: 3}
+      propertyPath: tipoTavolo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2144595519, guid: 3f8a8fb816d96944ebcb6857cac0c834, type: 3}
+      propertyPath: tipoTavolo
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2340472133468622971, guid: 3f8a8fb816d96944ebcb6857cac0c834, type: 3}
       propertyPath: m_Name
       value: Ristorante

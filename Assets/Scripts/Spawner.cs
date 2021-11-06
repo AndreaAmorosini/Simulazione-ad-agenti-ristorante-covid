@@ -103,12 +103,20 @@ public class Spawner : MonoBehaviour
     {
         if(numClienti < maxClienti)
         {
+            List<GameObject> clienti = new List<GameObject>();
             GameObject tavoloLibero = tavoliOccupatiCounter.getTavoloLibero();
             Debug.Log("SPAWNER : TAVOLOLIBERO : tavolo : " + tavoloLibero.name);
             if (tavoloLibero != null)
             {
-                if (tavoloLibero.GetComponent<StatoTavolo>().getTipoTavolo() == 1)
+                if (tavoloLibero.GetComponent<StatoTavolo>().getTipoTavolo() == StatoTavolo.TipoTavolo.daQuattro)
                 {
+                    for(int i = 0; i < 4; i++)
+                    {
+                        GameObject cliente = ClientePool.SharedInstance.GetPooledObject();
+                        clienti.Add(cliente);
+                    }
+
+                    /*
                     Debug.Log("SPAWNER : TIPOTAVOLO : " + tavoloLibero.GetComponent<StatoTavolo>().getTipoTavolo());
                     GameObject cliente1 = ClientePool.SharedInstance.GetPooledObject();
                     Debug.Log("SPAWNER : SPAWNGRUPPOCLIENTI : Cliente : " + cliente1.name);
@@ -150,10 +158,49 @@ public class Spawner : MonoBehaviour
 
                     }
 
+                    */
+
+                    if(clienti.Count == 4)
+                    {
+                        clienti[0].transform.position = spawnPointClienti1.position;
+                        clienti[0].transform.rotation = spawnPointClienti1.rotation;
+
+                        clienti[1].transform.position = spawnPointClienti2.position;
+                        clienti[1].transform.rotation = spawnPointClienti2.rotation;
+
+                        clienti[2].transform.position = spawnPointClienti3.position;
+                        clienti[2].transform.rotation = spawnPointClienti3.rotation;
+
+                        clienti[3].transform.position = spawnPointClienti4.position;
+                        clienti[3].transform.rotation = spawnPointClienti4.rotation;
+
+                        clienti[0].SetActive(true);
+                        clienti[1].SetActive(true);
+                        clienti[2].SetActive(true);
+                        clienti[3].SetActive(true);
+
+                        clienti[0].GetComponent<IAClienteFSM>().posto = tavoloLibero.GetComponent<StatoTavolo>().postoCliente1;
+                        clienti[1].GetComponent<IAClienteFSM>().posto = tavoloLibero.GetComponent<StatoTavolo>().postoCliente2;
+                        clienti[2].GetComponent<IAClienteFSM>().posto = tavoloLibero.GetComponent<StatoTavolo>().postoCliente3;
+                        clienti[3].GetComponent<IAClienteFSM>().posto = tavoloLibero.GetComponent<StatoTavolo>().postoCliente4;
+
+                        numClienti += 4;
+                        yield return new WaitForSeconds(delay);
+                        isSpawning = false;
+
+                    }
 
                 }
-                else if (tavoloLibero.GetComponent<StatoTavolo>().getTipoTavolo() == 2)
+                else if (tavoloLibero.GetComponent<StatoTavolo>().getTipoTavolo() == StatoTavolo.TipoTavolo.daDue)
                 {
+
+                    for (int i = 0; i < 2; i++)
+                    {
+                        GameObject cliente = ClientePool.SharedInstance.GetPooledObject();
+                        clienti.Add(cliente);
+                    }
+
+                    /*
                     Debug.Log("SPAWNER : TIPOTAVOLO : " + tavoloLibero.GetComponent<StatoTavolo>().getTipoTavolo());
                     GameObject cliente1 = ClientePool.SharedInstance.GetPooledObject();
                     Debug.Log("SPAWNER : SPAWNGRUPPOCLIENTI : Cliente : " + cliente1.name);
@@ -179,6 +226,28 @@ public class Spawner : MonoBehaviour
                         isSpawning = false;
 
                     }
+                    */
+
+                    if (clienti.Count == 4)
+                    {
+                        clienti[0].transform.position = spawnPointClienti1.position;
+                        clienti[0].transform.rotation = spawnPointClienti1.rotation;
+
+                        clienti[1].transform.position = spawnPointClienti2.position;
+                        clienti[1].transform.rotation = spawnPointClienti2.rotation;
+
+                        clienti[0].SetActive(true);
+                        clienti[1].SetActive(true);
+
+                        clienti[0].GetComponent<IAClienteFSM>().posto = tavoloLibero.GetComponent<StatoTavolo>().postoCliente1;
+                        clienti[1].GetComponent<IAClienteFSM>().posto = tavoloLibero.GetComponent<StatoTavolo>().postoCliente2;
+                        numClienti += 4;
+
+                        yield return new WaitForSeconds(delay);
+                        isSpawning = false;
+
+                    }
+
 
                 }
             }

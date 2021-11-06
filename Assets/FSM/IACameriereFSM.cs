@@ -56,6 +56,13 @@ public class IACameriereFSM : MonoBehaviour
     public GameObject particleSystem;
     public GameObject covidCollider;
     public int infectionPercentage;
+    public int contagiousPercentage;
+
+    public int angoloEmissione;
+    public int ampiezzaEmissione;
+    public float maxPathVirus;
+
+
 
 
 
@@ -75,7 +82,8 @@ public class IACameriereFSM : MonoBehaviour
             this.Contagious();
         }
         isInfected = false;
-        infectionPercentage = Random.Range(0, 100);
+        //infectionPercentage = Random.Range(0, 100);
+        //contagiousPercentage = Random.Range(0, 100);
         path = GetComponent<AIPath>();
         ani = GetComponent<Animator>();
         ai = GetComponent<AIDestinationSetter>();
@@ -93,6 +101,24 @@ public class IACameriereFSM : MonoBehaviour
         spriteStato5 = Resources.Load<Sprite>("icons/stoTornando");
         spriteStato6 = Resources.Load<Sprite>("icons/servendo");
         spriteStato7 = Resources.Load<Sprite>("icons/tornoInCucina");
+
+        if (covidController.Infected(contagiousPercentage))
+        {
+            particleSystem.SetActive(true);
+            GetComponentsInChildren<Image>()[1].color = Color.yellow;
+            Debug.Log("Contagioso");
+            GameObject.FindGameObjectWithTag("Utility").GetComponent<CovidController>().addContagious();
+            if(GetComponentInChildren<ColliderCovidCameriere>() != null)
+            {
+                GetComponentInChildren<ColliderCovidCameriere>().gameObject.SetActive(false);
+
+            }
+            var covid = GetComponentInChildren<Illness>().GetComponentInChildren<ParticleSystem>().shape;
+            covid.angle = angoloEmissione;
+            Illness.EmissionAngle = ampiezzaEmissione;
+            GetComponentInChildren<Illness>().GetComponentInChildren<ParticleSystem>().startLifetime = maxPathVirus;
+
+        }
 
         m_fsm = new FSM();
         m_fsm.Add((int)CameriereStates.CERCO_CLIENTI, new statoCameriere(m_fsm, CameriereStates.CERCO_CLIENTI, this));
@@ -528,7 +554,7 @@ public class IACameriereFSM : MonoBehaviour
     public void Infected()
     {
         isInfected = true;
-        GetComponentsInChildren<Image>()[1].color = Color.white;
+        GetComponentsInChildren<Image>()[1].color = Color.red;
         covidController.addInfected();
         GetComponentInChildren<ColliderCovidCameriere>().gameObject.SetActive(false);
     }

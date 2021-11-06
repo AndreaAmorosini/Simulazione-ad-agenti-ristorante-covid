@@ -46,8 +46,6 @@ public class CovidController : MonoBehaviour
 
     public bool Infected(int infectionPercentage)
     {
-        seed++;
-        Random.seed = seed;
         return Random.Range(0, 100) < infectionPercentage;
     }
 
