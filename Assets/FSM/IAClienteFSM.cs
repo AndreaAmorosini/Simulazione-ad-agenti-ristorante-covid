@@ -165,6 +165,7 @@ public class IAClienteFSM : MonoBehaviour
                 isInfected = false;
                 GetComponentsInChildren<Image>()[1].color = Color.green;
                 colliderCovid.SetActive(true);
+                particleSystem.SetActive(false);
             }
             ai.target = null;
             iterazione++;
@@ -467,6 +468,7 @@ public class IAClienteFSM : MonoBehaviour
             GetComponentInChildren<ColliderCovidCliente>().gameObject.SetActive(false);
 
         }
+        particleSystem.SetActive(true);
     }
 
     public void Contagious()

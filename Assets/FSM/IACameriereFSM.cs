@@ -557,6 +557,7 @@ public class IACameriereFSM : MonoBehaviour
         GetComponentsInChildren<Image>()[1].color = Color.red;
         covidController.addInfected();
         GetComponentInChildren<ColliderCovidCameriere>().gameObject.SetActive(false);
+        particleSystem.SetActive(true);
     }
 
     public void Contagious()

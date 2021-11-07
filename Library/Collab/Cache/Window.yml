@@ -14,11 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - "Assets/Scripts/Disponibilit\xE0Posto.cs"
+    - Assets/FSM/IAClienteFSM.cs
     - "Assets/Scripts/Disponibilit\xE0Posto.cs.meta"
     - 
     m_Values: 000000
-  RevisionSummary: 
+  RevisionSummary: 'Modificato il colore degli agenti
+
+    Modifiche all''implementazione
+    del settaggio della percentuale di contagio e contagiosi
+
+    Ora anche i camerieri
+    possono essere contagiosi
+
+    Modifiche all''UI'
   ChangesSearchValue: 
   SelectedHistoryRevision: 
   HistoryPageNumber: 0

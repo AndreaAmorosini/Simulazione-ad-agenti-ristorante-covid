@@ -1,22 +1,22 @@
 ﻿<Properties StartupConfiguration="{5B2F7B85-1EF3-2403-5129-81C24C4EBCAC}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/FSM/IACameriereFSM.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/FSM/IAClienteFSM.cs">
     <Files>
       <File FileName="Assets/Scripts/SimulationCounter.cs" Line="1" Column="1" IsPinned="True" />
       <File FileName="Assets/Scripts/CovidController.cs" IsPinned="True" />
-      <File FileName="Assets/FSM/IAClienteFSM.cs" Line="90" Column="11" IsPinned="True" />
+      <File FileName="Assets/FSM/IAClienteFSM.cs" Line="183" Column="10" IsPinned="True" />
       <File FileName="Assets/LookAtCamera.cs" />
       <File FileName="Assets/Scripts/PostiPool.cs" />
-      <File FileName="Assets/FSM/IACameriereFSM.cs" Line="92" Column="62" />
+      <File FileName="Assets/FSM/IACameriereFSM.cs" Line="560" Column="40" />
       <File FileName="Assets/FSM/FSM.cs" />
       <File FileName="Assets/FSM/statoCameriere.cs" />
       <File FileName="Assets/FSM/statoCliente.cs" />
-      <File FileName="Assets/Scripts/UIBehaviour.cs" Line="73" Column="13" />
-      <File FileName="Assets/Scripts/ClientePool.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UIBehaviour.cs" />
+      <File FileName="Assets/Scripts/ClientePool.cs" />
       <File FileName="Assets/Scripts/Illness.cs" />
       <File FileName="Assets/Scripts/ColliderCovidCameriere.cs" />
-      <File FileName="Assets/Scripts/Spawner.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Spawner.cs" />
       <File FileName="Assets/Scripts/TavoliOccupatiCounter.cs" />
-      <File FileName="Assets/Scripts/CameraMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/CameraMovement.cs" />
       <File FileName="Assets/Scripts/ColliderCovidCliente.cs" />
       <File FileName="Assets/Scripts/StatoTavolo.cs" />
       <File FileName="Assets/Scripts/MoveModel.cs" />
@@ -29,7 +29,7 @@
           <Node name="RistoranteV2.0" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="FSM" expanded="True">
-                <Node name="IACameriereFSM.cs" selected="True" />
+                <Node name="IAClienteFSM.cs" selected="True" />
               </Node>
               <Node name="Scripts" expanded="True" />
             </Node>
@@ -40,7 +40,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="75298586-b339-4986-b198-a174a6d39e54" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="fb04950c-a152-4457-89b3-6678cb7121c3" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
