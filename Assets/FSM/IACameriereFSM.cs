@@ -76,11 +76,13 @@ public class IACameriereFSM : MonoBehaviour
         covidController = GameObject.FindGameObjectWithTag("Utility").GetComponent<CovidController>();
         particleSystem = GetComponentInChildren<Illness>().gameObject;
         particleSystem.SetActive(false);
+        /*
         if (isContagious)
         {
             particleSystem.SetActive(true);
             this.Contagious();
         }
+        */
         isInfected = false;
         //infectionPercentage = Random.Range(0, 100);
         //contagiousPercentage = Random.Range(0, 100);
@@ -102,12 +104,14 @@ public class IACameriereFSM : MonoBehaviour
         spriteStato6 = Resources.Load<Sprite>("icons/servendo");
         spriteStato7 = Resources.Load<Sprite>("icons/tornoInCucina");
 
-        if (covidController.Infected(contagiousPercentage))
+        if (covidController.Infected(contagiousPercentage) &&
+            covidController.getNrCamerieriContagiosi() < covidController.nrMaxCamerieriContagiosi)
         {
             particleSystem.SetActive(true);
             GetComponentsInChildren<Image>()[1].color = Color.yellow;
             Debug.Log("Contagioso");
             GameObject.FindGameObjectWithTag("Utility").GetComponent<CovidController>().addContagious();
+            covidController.addCameriereContagioso();
             if(GetComponentInChildren<ColliderCovidCameriere>() != null)
             {
                 GetComponentInChildren<ColliderCovidCameriere>().gameObject.SetActive(false);

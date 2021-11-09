@@ -208,12 +208,14 @@ public class IAClienteFSM : MonoBehaviour
 
         stato.OnEnterDelegate += delegate ()
         {
-            if (covidController.Infected(contagiousPercentage))
+            if (covidController.Infected(contagiousPercentage) &&
+                covidController.getNrClientiContagiosi() < covidController.nrMaxClientiContagiosi)
             {
                 particleSystem.SetActive(true);
                 GetComponentsInChildren<Image>()[1].color = Color.yellow;
                 Debug.Log("Contagious");
-                GameObject.FindGameObjectWithTag("Utility").GetComponent<CovidController>().addContagious();
+                covidController.addContagious();
+                covidController.addClienteContagioso();
                 if(GetComponentInChildren<ColliderCovidCliente>() != null)
                 {
                     GetComponentInChildren<ColliderCovidCliente>().gameObject.SetActive(false);

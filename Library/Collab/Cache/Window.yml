@@ -14,19 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
+    - Assets/FSM/IACameriereFSM.cs
     - Assets/FSM/IAClienteFSM.cs
+    - Assets/Scenes/Ristorante.unity
+    - Assets/Scripts/CovidController.cs
+    - "Assets/Scripts/Disponibilit\xE0Posto.cs"
     - "Assets/Scripts/Disponibilit\xE0Posto.cs.meta"
+    - Assets/Scripts/UIBehaviour.cs
     - 
-    m_Values: 000000
-  RevisionSummary: 'Modificato il colore degli agenti
-
-    Modifiche all''implementazione
-    del settaggio della percentuale di contagio e contagiosi
-
-    Ora anche i camerieri
-    possono essere contagiosi
-
-    Modifiche all''UI'
+    m_Values: 0000000000000000
+  RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
   HistoryPageNumber: 0

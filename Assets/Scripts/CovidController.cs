@@ -8,7 +8,10 @@ public class CovidController : MonoBehaviour
     public int nrContagious;
     public int nrInfected;
     public int InfectionPercentage;
-    public int seed;
+    public int nrMaxClientiContagiosi;
+    public int nrMaxCamerieriContagiosi;
+    private int nrCamerieriContagiosi;
+    private int nrClientiContagiosi;
 
     // Start is called before the first frame update
     void Start()
@@ -49,4 +52,23 @@ public class CovidController : MonoBehaviour
         return Random.Range(0, 100) < infectionPercentage;
     }
 
+    public void addCameriereContagioso()
+    {
+        nrCamerieriContagiosi++;
+    }
+
+    public void addClienteContagioso()
+    {
+        nrClientiContagiosi++;
+    }
+
+    public int getNrCamerieriContagiosi()
+    {
+        return nrCamerieriContagiosi;
+    }
+
+    public int getNrClientiContagiosi()
+    {
+        return nrClientiContagiosi;
+    }
 }

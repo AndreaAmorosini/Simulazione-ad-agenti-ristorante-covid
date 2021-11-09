@@ -32,6 +32,10 @@ public class UIBehaviour : MonoBehaviour
     public Slider sliderAmpEmissione;
     public Slider sliderPercorsoMax;
     public Slider sliderAngoloEmissione;
+    public Text textNrMaxClientiContagiosi;
+    public Text textNrMaxCamerieriContagiosi;
+    public Slider sliderNrMaxClientiContagiosi;
+    public Slider sliderNrMaxCamerieriContagiosi;
 
     ClientePool clientePool;
     public List<GameObject> clienti;
@@ -67,6 +71,8 @@ public class UIBehaviour : MonoBehaviour
         textAmpEmissione.text = "Ampiezza di emissione : " + sliderAmpEmissione.value;
         textPercorsoMax.text = "Percorso massimo : " + sliderPercorsoMax.value;
         textAngoloEmissione.text = "Angolo di emissione : " + sliderAngoloEmissione.value;
+        textNrMaxClientiContagiosi.text = "Num. Max. Clienti Contagiosi : " + sliderNrMaxClientiContagiosi.value;
+        textNrMaxCamerieriContagiosi.text = "Num. Max Camerieri Contagiosi : " + sliderNrMaxCamerieriContagiosi.value;
         foreach (GameObject cliente in clienti)
         {
             cliente.GetComponent<IAClienteFSM>().walkSpeed = sliderWalkSpeed.value;
@@ -87,6 +93,8 @@ public class UIBehaviour : MonoBehaviour
         }
         spawner.delay = sliderDelaySpawn.value;
         spawner.maxCamerieri = (int) sliderNumMaxCamerieri.value;
+        covidController.nrMaxCamerieriContagiosi = (int) sliderNrMaxCamerieriContagiosi.value;
+        covidController.nrMaxClientiContagiosi = (int)sliderNrMaxClientiContagiosi.value;
     }
 
     IEnumerator ottienClienti(float waitTime)
@@ -119,6 +127,10 @@ public class UIBehaviour : MonoBehaviour
         sliderPercentualeContagiosi.gameObject.SetActive(false);
         textPercentualeContagiosi.gameObject.SetActive(false);
         subtextPercentuleContagiosi.gameObject.SetActive(false);
+        textNrMaxCamerieriContagiosi.gameObject.SetActive(false);
+        textNrMaxClientiContagiosi.gameObject.SetActive(false);
+        sliderNrMaxCamerieriContagiosi.gameObject.SetActive(false);
+        sliderNrMaxClientiContagiosi.gameObject.SetActive(false);
     }
   
 }
